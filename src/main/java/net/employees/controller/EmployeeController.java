@@ -31,7 +31,7 @@ public class EmployeeController {
         return "employees";
     }
 
-    @RequestMapping(value = "employees/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/employees/add", method = RequestMethod.POST)
     public String addEmployee(@ModelAttribute("employee") Employee employee){
         if (employee.getId() == 0){
             this.employeeService.addEmployee(employee);

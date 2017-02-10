@@ -3,6 +3,9 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <html>
 <head>
     <title>Employees Page</title>
@@ -46,12 +49,23 @@
     </style>
 </head>
 <body>
-<a href="../../index.jsp">Back to index page</a>
+
+<!--logout-->
+<div class="container">
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form id="logoutForm" method="POST" action="${contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        </h2>
+
+    </c:if>
+</div>
 
 <br/>
 <br/>
 
-<h1>Employees List</h1>
+<h3>Employees List</h3>
 
 <c:if test="${!empty listEmployees}">
     <table class="tg">
@@ -77,7 +91,7 @@
 </c:if>
 
 
-<h1>Add new employee</h1>
+<h3>Add new employee</h3>
 
 <c:url var="addAction" value="/employees/add"/>
 
@@ -99,7 +113,7 @@
         <tr>
             <td>
                 <form:label path="name">
-                    <spring:message text="Name"/>
+                    <spring:message text="name"/>
                 </form:label>
             </td>
             <td>

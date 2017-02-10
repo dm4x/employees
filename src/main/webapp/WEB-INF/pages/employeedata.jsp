@@ -50,7 +50,7 @@
 <br/>
 <br/>
 
-<h1>Employee Details</h1>
+<h3>Employee Details</h3>
 
 <table class="tg">
     <tr>
