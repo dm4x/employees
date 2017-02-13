@@ -52,13 +52,13 @@
 
     <!--EmployeeDao and EmployeeService beans-->
 
-    <bean id="employeeDao" class="net.employees.dao.EmployeeDaoImpl">
-        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
-    </bean>
+    <!--<bean id="employeeDao" class="net.employees.dao.EmployeeDaoImpl">-->
+        <!--<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>-->
+    <!--</bean>-->
 
-    <bean id="employeeService" class="net.employees.service.EmployeeServiceImpl">
-        <property name="employeeDao" ref="employeeDao"/>
-    </bean>
+    <!--<bean id="employeeService" class="net.employees.service.EmployeeServiceImpl">-->
+        <!--<property name="employeeDao" ref="employeeDao"/>-->
+    <!--</bean>-->
 
     <bean id="transactionManager"
           class="org.springframework.orm.jpa.JpaTransactionManager">

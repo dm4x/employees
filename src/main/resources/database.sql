@@ -25,8 +25,16 @@ CREATE TABLE user_roles (
 )
   ENGINE = InnoDB;
 
--- Insert data
+-- Table: employees
+CREATE TABLE employees (
+  id       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  position VARCHAR(255) NOT NULL,
+  salary VARCHAR(255) NOT NULL
+)
+  ENGINE = InnoDB;
 
+-- Insert data
 INSERT INTO users VALUES (1, 'admin', '$2a$11$PhvUUcUvR7iDGo4Qx6uyoODGHpcRuh0i8D.cKfhAC4bhkleui29BO');
 INSERT INTO roles VALUES (1, 'ROLE_USER');
 INSERT INTO roles VALUES (2, 'ROLE_ADMIN');

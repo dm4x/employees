@@ -56,18 +56,20 @@
         <form id="logoutForm" method="POST" action="${contextPath}/logout">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        <h2>Welcome ${pageContext.request.userPrincipal.name}
+            <br/>
+            <a href="" onclick="document.forms['logoutForm'].submit()">Logout</a>
         </h2>
 
-    </c:if>
-</div>
 
-<br/>
-<br/>
 
-<h3>Employees List</h3>
 
-<c:if test="${!empty listEmployees}">
+    <br/>
+    <br/>
+
+    <h3>Employees List</h3>
+
+    <c:if test="${!empty listEmployees}">
     <table class="tg">
         <tr>
             <th width="80">ID</th>
@@ -91,11 +93,11 @@
 </c:if>
 
 
-<h3>Add new employee</h3>
+    <h3>Add new employee</h3>
 
-<c:url var="addAction" value="/employees/add"/>
+    <c:url var="addAction" value="/employees/add"/>
 
-<form:form action="${addAction}" commandName="employee">
+    <form:form action="${addAction}" commandName="employee">
     <table>
         <c:if test="${!empty employee.name}">
             <tr>
@@ -154,5 +156,8 @@
         </tr>
     </table>
 </form:form>
+    </c:if>
+</div>
+
 </body>
 </html>

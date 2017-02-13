@@ -2,6 +2,7 @@ package net.employees.service;
 
 import net.employees.dao.EmployeeDao;
 import net.employees.model.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,40 +13,30 @@ import java.util.List;
  */
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-
+    @Autowired
     private EmployeeDao employeeDao;
 
-    public void setEmployeeDao(EmployeeDao employeeDao) {
-        this.employeeDao = employeeDao;
+    @Override
+    @Transactional
+    public void save(Employee employee) {
+        employeeDao.save(employee);
     }
 
     @Override
     @Transactional
-    public void addEmployee(Employee employee) {
-        this.employeeDao.addEmployee(employee);
+    public void delete(Employee employee){
+        employeeDao.delete(employee);
     }
 
     @Override
     @Transactional
-    public void updateEmployee(Employee employee) {
-        this.employeeDao.updateEmployee(employee);
-    }
-
-    @Override
-    @Transactional
-    public void deleteEmployee(int id) {
-        this.employeeDao.deleteEmployee(id);
-    }
-
-    @Override
-    @Transactional
-    public Employee getEmployeeById(int id) {
-        return this.employeeDao.getEmployeeById(id);
+    public Employee getEmployeeById(Long id) {
+        return employeeDao.getEmployeeById(id);
     }
 
     @Override
     @Transactional
     public List<Employee> listEmployees() {
-        return this.employeeDao.listEmployees();
+        return employeeDao.findAll();
     }
 }

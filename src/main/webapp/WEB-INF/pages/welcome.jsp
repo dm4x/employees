@@ -33,14 +33,14 @@
 
         <h2>Welcome ${pageContext.request.userPrincipal.name}
             <br/>
-            <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+            <a href="" onclick="document.forms['logoutForm'].submit()">Logout</a>
         </h2>
 
     </c:if>
 
     <h3>Employees service</h3>
     <br/>
-    <a href="/employees" target="_blank">employees manager</a>
+    <a href="/employees">employees manager</a>
 
 </div>
 </body>

@@ -1,20 +1,20 @@
 package net.employees.service;
 
 import net.employees.model.Employee;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * Created by dm4x on 02.02.17.
  */
+
 public interface EmployeeService {
-    public void addEmployee(Employee employee);
+    void save (Employee employee);
 
-    public void updateEmployee(Employee employee);
+    void delete (Employee employee);
 
-    public void deleteEmployee(int id);
+    Employee getEmployeeById(Long id);
 
-    public Employee getEmployeeById(int id);
-
-    public List<Employee> listEmployees();
+    List<Employee> listEmployees();
 }

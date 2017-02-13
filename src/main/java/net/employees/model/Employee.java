@@ -7,10 +7,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "employees")
 public class Employee {
+
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -21,11 +22,12 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
-    public int getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
