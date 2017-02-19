@@ -60,10 +60,6 @@
             <br/>
             <a href="" onclick="document.forms['logoutForm'].submit()">Logout</a>
         </h2>
-
-
-
-
     <br/>
     <br/>
 
